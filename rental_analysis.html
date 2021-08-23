@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Analysis</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/eda27e0386.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <!-- NavBar Section  -->
+    <nav class="navbar">
+        <div class="navbar__container">
+          <a href="index.html" id="navbar__logo">Easy Budget</a>
+          <div class="navbar__toggle" id="mobile-menu">
+            <span class="bar"></span> 
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+          <ul class="navbar__menu">
+            <li class="navbar__item">
+              <a href="#home" class="navbar__links" id="home-page">Home</a>
+            </li>
+            <li class="navbar__item">
+              <a href="#about" class="navbar__links" id="about-page">About</a>
+            </li>
+            <li class="navbar__item">
+              <a href="#services" class="navbar__links" id="services-page"
+                >Services</a
+              >
+            </li>
+            <li class="navbar__btn">
+              <a href="#sign-up" class="button" id="signup">Start Analysis</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- End NavBar Section  -->
+
+    <div class="main__wrap" id="main">
+        <!-- Variables Section  -->
+        <div class="variables__wrapper">
+            <div class="variable__elem" id="variable-area">
+                <h3>Area : </h3>
+                <input type="number" id="area" placeholder="Enter Area" step="0.01">
+            </div>
+            <div class="variable__elem" id="variable-value">
+                <h3>Value of Land : </h3>
+                <input type="number" id="land__value" placeholder="Enter land value">
+            </div>
+            <div class="variable__elem" id="variable-pourcentage">
+                <h3>Pourcentage construit : </h3>
+                <input type="range" min="0" max="100" value="1" id="pourcentage_cons" >
+                <p>Value : <span id="value__display1"></span></p>
+            </div>
+            <div class="variable__elem" id="variable-price">
+                <h3>Prix de construction : </h3>
+                <input type="range" min="100" max="250" value="100" id="prix_cons" >
+                <p>Value : <span id="value__display2"></span></p>
+                
+            </div>
+            <div class="variable__elem" id="variable-rent">
+                <h3>Prix du loyer : </h3>
+                <input type="range" min="0" max="10" step="0.1" value="0.1" id="rent" >
+                <p>Value : <span id="value__display3"></span></p>
+
+            </div>
+            <div class="variable__elem" id="variable-rent">
+                <h3>Taux d'occupation : </h3>
+                <input type="range" min="0" max="100" step="1" value="1" id="occupation" >
+                <p>Value : <span id="value__display31"></span></p>
+
+            </div>
+            <div class="variable__elem" id="variable-floor">
+                <h3>Nombre d'étage : </h3>
+                <input type="number" id="floor" placeholder="Enter Number of Floors">
+            </div>
+            <div class="variable__elem" id="variable-appart">
+                <h3>Nombre d'appartement par étage : </h3>
+                <input type="number" id="appart" placeholder="Enter Number of Appartement per Floor">
+            </div>
+            <div class="variable__elem" id="variable__interest">
+                <h3>Taux d'interet : </h3>
+                <input type="range" min="0" max="10" step="0.1" value="1" id="interest" >
+                <p>Value : <span id="value__display4"></span></p>
+
+            </div>
+            <div class="variable__elem" id="variable__years">
+                <h3>Nombre d'année : </h3>
+                <input type="range" min="0" max="50" value="1" id="years" >
+                <p>Value : <span id="value__display5"></span></p>
+
+            </div>
+            <div class="variable__elem" id="checkboxes">
+                    <input type="checkbox" id="parking" >
+                    <label for="parking">Include an underground parking</label><br>
+                    <input type="checkbox" id="prestation">
+                    <label for="prestation">Include the other prestations</label><br>         
+            </div>
+        </div>
+        <!-- End Variable Section  -->
+
+        <!-- Result  Section  -->
+        <div class="result__wrapper">
+            <h1>Results :</h1>
+            <p>Rent per appartement : <span id="rent__appart"></span> $</p>
+            <p>Monthly payement : <span id="monthly__payement"></span> $</p>
+            <p>Monthly revenu : <span id="monthly__revenu"></span> $</p>
+            <p>Monthly profit : <span id="monthly__profit"></span> $</p>
+
+        </div>
+        <!-- End Result Section  -->
+        <button id="submit" onclick="done();">Calculate</button>
+    </div>
+
+    <!-- Footer Section  -->
+    <div class="footer__container">
+        <div class="footer__links">
+          <div class="footer__link--wrapper">
+            <div class="footer__link--items">
+              <h2>About Us</h2>
+              <a href="/sign__up">How it works</a> <a href="/">Testimonials</a>
+              <a href="/">Careers</a> <a href="/">Terms of Service</a>
+            </div>
+            <div class="footer__link--items">
+              <h2>Contact Us</h2>
+              <a href="/">Contact</a> <a href="/">Support</a>
+              <a href="/">Destinations</a>
+            </div>
+          </div>
+          <div class="footer__link--wrapper">
+            
+            <div class="footer__link--items">
+              <h2>Social Media</h2>
+              <a href="/">Instagram</a> <a href="/">Facebook</a>
+              <a href="/">Youtube</a> <a href="/">Twitter</a>
+            </div>
+          </div>
+        </div>
+        <section class="social__media">
+          <div class="social__media--wrap">
+            <div class="footer__logo">
+              <a href="/" id="footer__logo">Easy Budget</a>
+            </div>
+            <p class="website__rights">© Easy Budget 2021. All rights reserved</p>
+            <div class="social__icons">
+              <a href="/" class="social__icon--link" target="_blank"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="/" class="social__icon--link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="/" class="social__icon--link"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="/" class="social__icon--link"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="/" class="social__icon--link"
+                ><i class="fab fa-twitter"></i
+              ></a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- End Footer Section  -->
+   
+    
+</body>
+
+<script src="rental_analysis.js"></script>
+<script src="app.js"></script>
+</html>
